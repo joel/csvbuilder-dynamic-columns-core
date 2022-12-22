@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/csvbuilder/dynamic/columns/version"
+require_relative "lib/csvbuilder/dynamic/columns/core/version"
 
 Gem::Specification.new do |spec|
   spec.name = "csvbuilder-dynamic-columns"

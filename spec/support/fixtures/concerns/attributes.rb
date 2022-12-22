@@ -44,7 +44,7 @@ module BasicAttributes
   end
 end
 
-require "csvbuilder/dynamic/columns/internal/dynamic_column_attribute_base"
+require "csvbuilder/dynamic/columns/core/internal/dynamic_column_attribute_base"
 
 class BasicDynamicColumnAttribute < Csvbuilder::DynamicColumnAttributeBase
   def unformatted_value
@@ -58,7 +58,7 @@ class BasicDynamicColumnAttribute < Csvbuilder::DynamicColumnAttributeBase
   def self.define_process_cell(*args); end
 end
 
-require "csvbuilder/dynamic/columns/concerns/dynamic_columns_base"
+require "csvbuilder/dynamic/columns/core/concerns/dynamic_columns_base"
 
 module BasicDynamicColumns
   extend ActiveSupport::Concern

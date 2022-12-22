@@ -21,30 +21,30 @@ Metrics/BlockLength:
 
 Metrics/ModuleLength:
   Exclude:
-    - 'spec/csvbuilder/dynamic/columns/concerns/dynamic_columns_base_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/concerns/import/dynamic_columns_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/dynamic_columns_base_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/import/dynamic_columns_spec.rb'
 
 # Offense count: 4
 # Configuration parameters: Prefixes, AllowedPatterns.
 # Prefixes: when, with, without
 RSpec/ContextWording:
   Exclude:
-    - 'spec/csvbuilder/dynamic/columns/concerns/dynamic_columns_base_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/concerns/export/dynamic_columns_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/concerns/import/dynamic_columns_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/concerns/model/dynamic_columns_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/dynamic_columns_base_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/export/dynamic_columns_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/import/dynamic_columns_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/model/dynamic_columns_spec.rb'
 
 # Offense count: 3
 # Configuration parameters: CountAsOne.
 RSpec/ExampleLength:
   Max: 10
   Exclude:
-    - 'spec/csvbuilder/dynamic/columns/concerns/dynamic_columns_base_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/dynamic_columns_base_spec.rb'
 
 # Offense count: 1
 RSpec/ExpectInHook:
   Exclude:
-    - 'spec/csvbuilder/dynamic/columns/internal/concerns/dynamic_column_shared_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/internal/concerns/dynamic_column_shared_spec.rb'
 
 # Offense count: 11
 # Configuration parameters: .
@@ -59,16 +59,16 @@ RSpec/MultipleExpectations:
 # Offense count: 6
 RSpec/RepeatedDescription:
   Exclude:
-    - 'spec/csvbuilder/dynamic/columns/concerns/dynamic_columns_base_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/concerns/export/dynamic_columns_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/concerns/model/dynamic_columns_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/dynamic_columns_base_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/export/dynamic_columns_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/model/dynamic_columns_spec.rb'
 
 # Offense count: 3
 RSpec/StubbedMock:
   Exclude:
-    - 'spec/csvbuilder/dynamic/columns/concerns/import/dynamic_columns_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/internal/concerns/dynamic_column_shared_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/internal/dynamic_column_attribute_base_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/import/dynamic_columns_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/internal/concerns/dynamic_column_shared_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/internal/dynamic_column_attribute_base_spec.rb'
 
 # Offense count: 9
 # Configuration parameters: AllowedConstants.
@@ -76,21 +76,21 @@ Style/Documentation:
   Exclude:
     - 'spec/**/*'
     - 'test/**/*'
-    - 'lib/csvbuilder/dynamic/columns/concerns/dynamic_columns_base.rb'
-    - 'lib/csvbuilder/dynamic/columns/concerns/export/dynamic_columns.rb'
-    - 'lib/csvbuilder/dynamic/columns/concerns/import/dynamic_columns.rb'
-    - 'lib/csvbuilder/dynamic/columns/concerns/model/dynamic_columns.rb'
-    - 'lib/csvbuilder/dynamic/columns/internal/concerns/dynamic_column_shared.rb'
-    - 'lib/csvbuilder/dynamic/columns/internal/dynamic_column_attribute_base.rb'
-    - 'lib/csvbuilder/dynamic/columns/internal/export/dynamic_column_attribute.rb'
-    - 'lib/csvbuilder/dynamic/columns/internal/import/dynamic_column_attribute.rb'
-    - 'lib/csvbuilder/dynamic/columns/internal/model/dynamic_column_header.rb'
+    - 'lib/csvbuilder/dynamic/columns/core/concerns/dynamic_columns_base.rb'
+    - 'lib/csvbuilder/dynamic/columns/core/concerns/export/dynamic_columns.rb'
+    - 'lib/csvbuilder/dynamic/columns/core/concerns/import/dynamic_columns.rb'
+    - 'lib/csvbuilder/dynamic/columns/core/concerns/model/dynamic_columns.rb'
+    - 'lib/csvbuilder/dynamic/columns/core/internal/concerns/dynamic_column_shared.rb'
+    - 'lib/csvbuilder/dynamic/columns/core/internal/dynamic_column_attribute_base.rb'
+    - 'lib/csvbuilder/dynamic/columns/core/internal/export/dynamic_column_attribute.rb'
+    - 'lib/csvbuilder/dynamic/columns/core/internal/import/dynamic_column_attribute.rb'
+    - 'lib/csvbuilder/dynamic/columns/core/internal/model/dynamic_column_header.rb'
 
 # Offense count: 6
 Style/OpenStructUse:
   Exclude:
-    - 'spec/csvbuilder/dynamic/columns/concerns/dynamic_columns_base_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/internal/concerns/dynamic_column_shared_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/internal/dynamic_column_attribute_base_spec.rb'
-    - 'spec/csvbuilder/dynamic/columns/internal/export/dynamic_column_attribute_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/concerns/dynamic_columns_base_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/internal/concerns/dynamic_column_shared_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/internal/dynamic_column_attribute_base_spec.rb'
+    - 'spec/csvbuilder/dynamic/columns/core/internal/export/dynamic_column_attribute_spec.rb'
     - 'spec/support/fixtures/concerns/attributes.rb'

@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "csvbuilder/dynamic/columns"
+require "csvbuilder/dynamic/columns/core"
 
 require "#{Dir.pwd}/spec/support/shared_context/with_context.rb"
 

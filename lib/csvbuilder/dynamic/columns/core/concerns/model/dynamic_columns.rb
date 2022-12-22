@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "csvbuilder/dynamic/columns/internal/model/dynamic_column_header"
+require "csvbuilder/dynamic/columns/core/internal/model/dynamic_column_header"
 
 module Csvbuilder
   module Model

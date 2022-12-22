@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "csvbuilder/dynamic/columns/concerns/model/dynamic_columns"
+require "csvbuilder/dynamic/columns/core/concerns/model/dynamic_columns"
 
 # Shared between Import and Export, see test fixture for basic setup
 module Csvbuilder
