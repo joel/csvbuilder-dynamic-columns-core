@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    csvbuilder-dynamic-columns (0.1.0)
+    csvbuilder-dynamic-columns-core (0.1.0)
       activesupport (>= 5.2, < 8)
       csvbuilder-core
 
@@ -70,7 +70,7 @@ PLATFORMS
   arm64-darwin-21
 
 DEPENDENCIES
-  csvbuilder-dynamic-columns!
+  csvbuilder-dynamic-columns-core!
   rake
   rspec
   rubocop

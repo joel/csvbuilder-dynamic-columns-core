@@ -3,7 +3,9 @@
 module Csvbuilder
   module Dynamic
     module Columns
-      VERSION = "0.1.0"
+      module Core
+        VERSION = "0.1.0"
+      end
     end
   end
 end

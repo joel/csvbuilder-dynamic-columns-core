@@ -5,7 +5,7 @@ module Csvbuilder
     module Columns
       RSpec.describe Core do
         it "has a version number" do
-          expect(Csvbuilder::Dynamic::Columns::VERSION).not_to be_nil
+          expect(Csvbuilder::Dynamic::Columns::Core::VERSION).not_to be_nil
         end
       end
     end

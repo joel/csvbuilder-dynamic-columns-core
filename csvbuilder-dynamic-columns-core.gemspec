@@ -3,8 +3,8 @@
 require_relative "lib/csvbuilder/dynamic/columns/core/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "csvbuilder-dynamic-columns"
-  spec.version = Csvbuilder::Dynamic::Columns::VERSION
+  spec.name = "csvbuilder-dynamic-columns-core"
+  spec.version = Csvbuilder::Dynamic::Columns::Core::VERSION
   spec.authors = ["Joel Azemar"]
   spec.email = ["joel.azemar@gmail.com"]
 
