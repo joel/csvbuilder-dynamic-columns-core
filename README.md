@@ -1,8 +1,8 @@
-# Csvbuilder::Dynamic::Columns
+# Csvbuilder::Dynamic::Columns::Core
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/csvbuilder/dynamic/columns`. To experiment with that code, run `bin/console` for an interactive prompt.
+[Csvbuilder::Dynamic::Columns::Core](https://github.com/joel/csvbuilder-dynamic-columns-core) is part of the [csvbuilder-collection](https://github.com/joel/csvbuilder)
 
-TODO: Delete this and the text above, and describe your gem
+The Dynamic Columns Core contains the shared components used and extended by the Dynamic Columns Exporter and the Dynamic Columns Importer. It carries the architecture for the Dynamic Columns feature, and it can’t be used alone.
 
 ## Installation
 
@@ -16,7 +16,49 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
 ## Usage
 
-TODO: Write usage instructions here
+The Dynamic Columns Core adds a new entry into the
+DSL of the Model:
+
+```ruby
+class UserCsvRowModel
+  include Csvbuilder::Model
+
+  column :first_name
+  column :last_name
+
+  dynamic_column :skills
+end
+```
+
+Here we indicate we will have length variable headers about skills in the CSV file. Important notes, only one dynamic column can be defined per model, and it must be placed after the regular headers!
+
+The Dynamic Columns add two new methods to the Model:
+
+```ruby
+class BasicRowModel
+  include Csvbuilder::Model
+
+  class << self
+
+    # Safe to override. Method applied to each dynamic_column attribute
+    #
+    # @param cells [Array] Array of values
+    # @param column_name [Symbol] Dynamic column name
+    def format_dynamic_column_cells(cells, _column_name, _context)
+      cells
+    end
+
+    # Safe to override
+    #
+    # @return [String] formatted header
+    def format_dynamic_column_header(header_model, _column_name, _context)
+      header_model
+    end
+  end
+end
+```
+
+The collection of Objects is expected to be provided through the context with a key of the same name as the declared dynamic_column.
 
 ## Development
 
@@ -26,7 +68,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/csvbuilder-dynamic-columns. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/csvbuilder-dynamic-columns/blob/main/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/joel/csvbuilder-dynamic-columns. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/csvbuilder-dynamic-columns/blob/main/CODE_OF_CONDUCT.md).
 
 ## License
 
