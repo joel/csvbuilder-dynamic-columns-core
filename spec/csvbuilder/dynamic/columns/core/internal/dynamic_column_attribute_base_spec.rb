@@ -46,16 +46,39 @@ module Csvbuilder
       describe "#call_process_cell" do
         subject(:call_process_cell) { instance.send(:call_process_cell, "formatted dynamic cell value", "dynamic header") }
 
-        before do
-          row_model_class.class_eval do
-            def skill(formatted_cell, source_headers)
-              "#{formatted_cell} - ** - #{source_headers}"
+        context "without alias" do
+          before do
+            row_model_class.class_eval do
+              def skill(formatted_cell, source_header)
+                "#{formatted_cell} - ** - #{source_header}"
+              end
             end
+          end
+
+          it "calls the process_cell properly" do
+            expect(call_process_cell).to eql "formatted dynamic cell value - ** - dynamic header"
           end
         end
 
-        it "calls the process_cell properly" do
-          expect(call_process_cell).to eql "formatted dynamic cell value - ** - dynamic header"
+        context "with alias" do
+          let(:row_model_class) do
+            Class.new do
+              include Csvbuilder::Model
+              dynamic_column :skills, as: :abilities
+            end
+          end
+
+          before do
+            row_model_class.class_eval do
+              def ability(formatted_cell, source_header)
+                "#{formatted_cell} - ** - #{source_header}"
+              end
+            end
+          end
+
+          it "calls the process_cell properly" do
+            expect(call_process_cell).to eql "formatted dynamic cell value - ** - dynamic header"
+          end
         end
       end
     end

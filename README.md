@@ -60,6 +60,25 @@ end
 
 The collection of Objects is expected to be provided through the context with a key of the same name as the declared dynamic_column.
 
+## Aliasing
+
+When the Dynamic Column is defined, it can be aliased to another name if needed:
+
+```ruby
+class UserCsvRowModel
+  include Csvbuilder::Model
+
+  column :name
+
+  dynamic_column :skills, as: :abilities
+
+  def ability(cell_value, header)
+    # logic comes here
+  end
+end
+```
+
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
