@@ -78,6 +78,38 @@ class UserCsvRowModel
 end
 ```
 
+## Formatted Headers
+
+Formatting can be applied to the headers as follow:
+
+```ruby
+class UserCsvRowModel
+  include Csvbuilder::Model
+
+  column :name
+
+  dynamic_column :skills
+
+  class << self
+    def format_dynamic_column_header(header_model, column_name, _context)
+      "#{column_name}: [#{header_model}]"
+    end
+  end
+end
+```
+
+For simple cases, the shorter way can be used instead:
+
+```ruby
+class UserCsvRowModel
+  include Csvbuilder::Model
+
+  column :name
+
+  dynamic_column :skills, header: ->(name) { "skills: [#{name}]" }
+end
+```
+
 
 ## Development
 
