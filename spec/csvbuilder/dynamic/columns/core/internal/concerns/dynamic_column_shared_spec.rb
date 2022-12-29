@@ -18,12 +18,12 @@ module Csvbuilder
     describe "#header_models" do
       subject(:header_models) { instance.header_models }
 
-      let(:context) { { skills: "waka" } }
+      let(:context) { { skills: "I_am_not_an_array" } }
 
       before { expect(instance).to receive(:context).and_return(OpenStruct.new(context)) }
 
       it "calls the method of the column_name on the context as an array" do
-        expect(header_models).to eql ["waka"]
+        expect(header_models).to eql ["I_am_not_an_array"]
       end
 
       context "when the context doesn't have #header_models_context_key" do
@@ -43,7 +43,7 @@ module Csvbuilder
       end
 
       context "with option given" do
-        let(:options) { { header_models_context_key: :something } }
+        let(:options) { { as: :something } }
 
         it "returns the option value" do
           expect(header_models_context_key).to be :something

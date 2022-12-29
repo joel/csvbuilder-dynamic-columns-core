@@ -26,7 +26,7 @@ module Csvbuilder
     end
 
     def header_models_context_key
-      options[:header_models_context_key] || column_name
+      options[:as] || column_name
     end
   end
 end

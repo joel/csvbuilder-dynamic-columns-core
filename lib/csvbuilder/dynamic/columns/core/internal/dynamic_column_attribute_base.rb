@@ -7,20 +7,32 @@ module Csvbuilder
   class DynamicColumnAttributeBase < AttributeBase
     include DynamicColumnShared
 
+    # The value is the collection of cell's values
+    # @return [Array] Array of values
     def value
       @value ||= row_model_class.format_dynamic_column_cells(unformatted_value, column_name, row_model.context)
     end
 
+    # The source_cells is meant to be implemented in the concret class
+    # @return [Array] Array of values
     def formatted_cells
       source_cells.map do |cell|
         row_model_class.format_cell(cell, column_name, row_model.context)
       end
     end
 
+    def source_cells
+      raise NotImplementedError
+    end
+
+    def unformatted_value
+      raise NotImplementedError
+    end
+
     protected
 
     def process_cell_method_name
-      self.class.process_cell_method_name(column_name)
+      self.class.process_cell_method_name(header_models_context_key)
     end
 
     # Calls the process_cell to return the value of a Attribute given the args

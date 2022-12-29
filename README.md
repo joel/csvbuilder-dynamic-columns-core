@@ -8,11 +8,11 @@ The Dynamic Columns Core contains the shared components used and extended by the
 
 Install the gem and add to the application's Gemfile by executing:
 
-    $ bundle add csvbuilder-dynamic-columns
+    $ bundle add csvbuilder-dynamic-columns-core
 
 If bundler is not being used to manage dependencies, install the gem by executing:
 
-    $ gem install csvbuilder-dynamic-columns
+    $ gem install csvbuilder-dynamic-columns-core
 
 ## Usage
 

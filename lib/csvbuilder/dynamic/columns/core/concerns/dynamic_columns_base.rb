@@ -22,7 +22,11 @@ module Csvbuilder
     }.freeze
     ATTRIBUTE_METHODS.each do |method_name, attribute_method|
       define_method(method_name) do
-        super().merge! column_names_to_attribute_value(self.class.dynamic_column_names, attribute_method)
+        super().merge!(
+          column_names_to_attribute_value(
+            self.class.dynamic_column_names, attribute_method
+          )
+        )
       end
     end
 
@@ -38,7 +42,10 @@ module Csvbuilder
       # Define default attribute method for a dynamic_column
       # @param column_name [Symbol] the cell's column_name
       def define_dynamic_attribute_method(column_name)
-        define_proxy_method(column_name) { original_attribute(column_name) }
+        define_proxy_method(column_name) do
+          original_attribute(column_name)
+        end
+
         dynamic_attribute_class.define_process_cell(self, column_name)
       end
 
