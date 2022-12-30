@@ -4,6 +4,10 @@
 
 The Dynamic Columns Core contains the shared components used and extended by the Dynamic Columns Exporter and the Dynamic Columns Importer. It carries the architecture for the Dynamic Columns feature, and it can’t be used alone.
 
+See:
+ - [Csvbuilder::Dynamic::Columns::Exporter](https://github.com/joel/csvbuilder-dynamic-columns-exporter)
+ - [Csvbuilder::Dynamic::Columns::Importer](https://github.com/joel/csvbuilder-dynamic-columns-importer)
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
