@@ -43,6 +43,7 @@ module Csvbuilder
       # @param column_name [Symbol] the cell's column_name
       def define_dynamic_attribute_method(column_name)
         define_proxy_method(column_name) do
+          # Proxy to the concret implementation if DynamicColumnAttributeBase#value
           original_attribute(column_name)
         end
 

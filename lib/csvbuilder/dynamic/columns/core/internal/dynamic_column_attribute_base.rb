@@ -31,16 +31,35 @@ module Csvbuilder
 
     protected
 
+    # Instance access to singularized name of the dynamic_column
+    #
+    # @return [Symbol] value
     def process_cell_method_name
       self.class.process_cell_method_name(header_models_context_key)
     end
 
+    # Calls the singularized method of the dynamic_column
+    #
+    # i.e: With dynamic_column :skills
+    # => :skill
+    #
     # Calls the process_cell to return the value of a Attribute given the args
+    #
+    # @return [Object] value
     def call_process_cell(*args)
       row_model.public_send(process_cell_method_name, *args)
     end
 
     class << self
+      # The singularized name of the dynamic_column
+      #
+      # i.e: With dynamic_column :skills
+      # => :skill
+      #
+      # i.e: With dynamic_column :skills, as: :programming_languages
+      # => :programming_language
+      #
+      # @return [Symbol] Symbol
       def process_cell_method_name(column_name)
         column_name.to_s.singularize.to_sym
       end
