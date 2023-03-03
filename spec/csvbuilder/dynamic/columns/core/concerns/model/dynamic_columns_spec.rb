@@ -60,7 +60,7 @@ module Csvbuilder
 
           with_context "standard columns defined" do
             it "returns an array with header column names + header_models" do
-              expect(headers).to eql %i[first_name last_name] + skills
+              expect(headers).to eql ["First name", "Last name"] + skills
             end
           end
         end
