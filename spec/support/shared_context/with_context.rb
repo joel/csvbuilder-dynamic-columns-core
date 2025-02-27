@@ -8,11 +8,11 @@ module WithContext
     # is short hand for:
     # context "context_name1" { include_context "context_name1"; <block> }
     # context "context_name2" { include_context "context_name2"; <block> }...
-    def with_context(*context_names, &block)
+    def with_context(*context_names, &)
       context_names.each do |context_name|
         context context_name do
           include_context context_name
-          instance_exec(&block)
+          instance_exec(&)
         end
       end
     end

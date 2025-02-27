@@ -31,8 +31,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "activesupport", ">= 5.2"
-  spec.add_dependency "csvbuilder-core"
   spec.add_dependency "csv"
+  spec.add_dependency "csvbuilder-core"
 
   spec.metadata["rubygems_mfa_required"] = "true"
 end

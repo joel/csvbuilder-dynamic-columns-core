@@ -26,8 +26,7 @@ module Csvbuilder
     end
 
     before do
-      allow(instance).to receive(:context).and_return(OpenStruct.new)
-      allow(instance).to receive(:header_models).and_return(header_models)
+      allow(instance).to receive_messages(context: OpenStruct.new, header_models: header_models)
     end
 
     describe "instance" do
