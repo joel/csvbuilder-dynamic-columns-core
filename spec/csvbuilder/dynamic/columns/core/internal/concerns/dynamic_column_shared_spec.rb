@@ -11,8 +11,7 @@ module Csvbuilder
     let(:options) { {} }
 
     before do
-      allow(instance).to receive(:column_name).and_return(:skills)
-      allow(instance).to receive(:options).and_return(options)
+      allow(instance).to receive_messages(column_name: :skills, options: options)
     end
 
     describe "#header_models" do

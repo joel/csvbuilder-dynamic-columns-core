@@ -9,9 +9,9 @@ module WithThisThenContext
     # is short hand for:
     # <block>
     # with_context "context_name1", "context_name1"
-    def with_this_then_context(*context_names, &block)
-      instance_exec(&block)
-      with_context(*context_names, &block)
+    def with_this_then_context(*context_names, &)
+      instance_exec(&)
+      with_context(*context_names, &)
     end
   end
 end
